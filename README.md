@@ -1,6 +1,6 @@
-# API Client boilerplate template
+# Pagar.Me SDK client
 
-A boilerplate API client template for those that want to build a .Net API clients wrappers
+The [Pagar.Me](https://pagar.me) SDK for .NET projects
 
 ![API Client Boilerplate](https://raw.githubusercontent.com/guibranco/pagarme-sdk-dotnet/master/logo.png)
 

@@ -2,7 +2,7 @@
 
 The [Pagar.Me](https://pagar.me) SDK for .NET projects.
 
-![Pagar.Me SDK .NET](https://raw.githubusercontent.com/guibranco/pagarme-sdk-dotnet/master/logo.png)
+![Pagar.Me SDK .NET](https://raw.githubusercontent.com/guibranco/pagarme-sdk-dotnet/main/logo.png)
 
 ## CI/CD
 
@@ -16,7 +16,7 @@ The [Pagar.Me](https://pagar.me) SDK for .NET projects.
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7d2d55d973504d37b6046db35243e6d8)](https://www.codacy.com/gh/guibranco/pagarme-sdk-dotnet/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=guibranco/pagarme-sdk-dotnet&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/7d2d55d973504d37b6046db35243e6d8)](https://www.codacy.com/gh/guibranco/pagarme-sdk-dotnet/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=guibranco/pagarme-sdk-dotnet&amp;utm_campaign=Badge_Grade)
-[![Codecov](https://codecov.io/gh/guibranco/pagarme-sdk-dotnet/branch/master/graph/badge.svg)](https://codecov.io/gh/guibranco/pagarme-sdk-dotnet)
+[![Codecov](https://codecov.io/gh/guibranco/pagarme-sdk-dotnet/branch/main/graph/badge.svg)](https://codecov.io/gh/guibranco/pagarme-sdk-dotnet)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guibranco_pagarme-sdk-dotnet&metric=alert_status)](https://sonarcloud.io/dashboard?id=guibranco_pagarme-sdk-dotnet)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=guibranco_pagarme-sdk-dotnet&metric=coverage)](https://sonarcloud.io/dashboard?id=guibranco_pagarme-sdk-dotnet)
 

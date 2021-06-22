@@ -1,8 +1,8 @@
 # Pagar.Me SDK client
 
-The [Pagar.Me](https://pagar.me) SDK for .NET projects
+The [Pagar.Me](https://pagar.me) SDK for .NET projects.
 
-![API Client Boilerplate](https://raw.githubusercontent.com/guibranco/pagarme-sdk-dotnet/master/logo.png)
+![Pagar.Me SDK .NET](https://raw.githubusercontent.com/guibranco/pagarme-sdk-dotnet/master/logo.png)
 
 ## CI/CD
 
@@ -55,7 +55,7 @@ Install-Package PackageName
 
 ## Features
 
-Implements all features of Project name API available at [Project name](https://project.name.com/)
+Implements all features of Project name API available at [Pagar.Me](https://docs.pagar.me/docs/overview-principal)
 
 - Feature #1
 - Feature #2

@@ -88,11 +88,13 @@ artifacts:
   name: Coverage
 
 deploy:
+
 - provider: Environment
   name: NuGet
   on:
    branch: main
   artifact: Package
+
 - provider: GitHub
   on:
    branch: main

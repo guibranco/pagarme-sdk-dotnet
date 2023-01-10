@@ -1,7 +1,7 @@
-using Xunit;
-
 namespace PagarMe.Tests
 {
+    using Xunit;
+
     public class UnitTest1
     {
         [Fact]

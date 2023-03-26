@@ -42,27 +42,27 @@ build:
   
 build_script:
 - ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { &
-        dotnet sonarscanner begin 
-         /k:"$env:SONAR_PROJECT" 
-         /o:"$env:SONAR_ORGANIZATION" 
+        dotnet sonarscanner begin
+         /k:"$env:SONAR_PROJECT"
+         /o:"$env:SONAR_ORGANIZATION"
          /d:sonar.branch.name="$env:APPVEYOR_REPO_BRANCH"
-         /d:sonar.host.url="https://sonarcloud.io" 
-         /d:sonar.login="$env:SONAR_TOKEN" 
-         /v:"$env:APPVEYOR_BUILD_NUMBER" 
-         /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" 
-         /d:sonar.coverage.exclusions="**/$env:SOLUTION_NAME.Tests/**,**/*Tests.cs" 
+         /d:sonar.host.url="https://sonarcloud.io"
+         /d:sonar.login="$env:SONAR_TOKEN"
+         /v:"$env:APPVEYOR_BUILD_NUMBER"
+         /d:sonar.exclusions="**/bin/**/*,**/obj/**/*"
+         /d:sonar.coverage.exclusions="**/$env:SOLUTION_NAME.Tests/**,**/*Tests.cs"
          /d:sonar.cs.opencover.reportsPaths="$env:CD\Tests\$env:SOLUTION_NAME.Tests\coverage.opencover.xml"
     }'
 - ps: 'if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { &
         dotnet sonarscanner begin 
          /k:"$env:SONAR_PROJECT" 
-         /o:"$env:SONAR_ORGANIZATION" 
+         /o:"$env:SONAR_ORGANIZATION"
          /d:sonar.pullrequest.key="$env:APPVEYOR_PULL_REQUEST_NUMBER"
-         /d:sonar.host.url="https://sonarcloud.io" 
-         /d:sonar.login="$env:SONAR_TOKEN" 
-         /v:"$env:APPVEYOR_BUILD_NUMBER" 
-         /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" 
-         /d:sonar.coverage.exclusions="**/$env:SOLUTION_NAME.Tests/**,**/*Tests.cs" 
+         /d:sonar.host.url="https://sonarcloud.io"
+         /d:sonar.login="$env:SONAR_TOKEN"
+         /v:"$env:APPVEYOR_BUILD_NUMBER"
+         /d:sonar.exclusions="**/bin/**/*,**/obj/**/*"
+         /d:sonar.coverage.exclusions="**/$env:SOLUTION_NAME.Tests/**,**/*Tests.cs"
          /d:sonar.cs.opencover.reportsPaths="$env:CD\Tests\$env:SOLUTION_NAME.Tests\coverage.opencover.xml"
     }'
 - dotnet build %SOLUTION_NAME%.sln

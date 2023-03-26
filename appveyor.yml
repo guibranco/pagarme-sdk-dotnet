@@ -1,9 +1,7 @@
 version: 1.0.{build}
 skip_tags: true
-image: Visual Studio 2019
+image: Visual Studio 2022
 configuration: Release
-skip_commits:
-  message: /(Create|Update) .*\.(png|jpg|jpeg|bmp|gif|md)/
 
 environment:
   SOLUTION_NAME: PagarMe
@@ -22,6 +20,10 @@ dotnet_csproj:
   assembly_version: '{version}' 
   file_version: '{version}' 
   informational_version: '{version}'
+  
+init:
+- SET JAVA_HOME=C:\Program Files\Java\jdk19
+- SET PATH=%JAVA_HOME%\bin;%PATH%
 
 before_build:
 - ps: $env:SONAR_PROJECT = "$env:APPVEYOR_REPO_NAME" -replace "/","_"
@@ -29,7 +31,7 @@ before_build:
 - cmd: nuget restore
 - cmd: choco install opencover.portable
 - cmd: choco install codecov
-- cmd: curl -L https://github.com/codacy/codacy-coverage-reporter/releases/download/13.11.17/codacy-coverage-reporter-assembly.jar > ./codacy-test-reporter.jar
+- cmd: curl -L https://github.com/codacy/codacy-coverage-reporter/releases/latest/download/codacy-coverage-reporter-assembly.jar > ./codacy-test-reporter.jar
 - cmd: dotnet tool install --global dotnet-sonarscanner
 
 build:
@@ -39,36 +41,46 @@ build:
   verbosity: normal
   
 build_script:
-- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER -And $env:APPVEYOR_REPO_BRANCH -eq "master") { & 
-  dotnet sonarscanner begin 
- /k:"$env:SONAR_PROJECT" 
- /o:"$env:SONAR_ORGANIZATION" 
- /d:sonar.host.url="https://sonarcloud.io" 
- /d:sonar.login="$env:SONAR_TOKEN" 
- /v:"$env:APPVEYOR_BUILD_NUMBER" 
- /d:sonar.exclusions="**/bin/**/*,**/obj/**/*" 
- /d:sonar.coverage.exclusions="**/$env:SOLUTION_NAME.Tests/**,**/*Tests.cs" 
- /d:sonar.cs.opencover.reportsPaths="$env:CD\Tests\$env:SOLUTION_NAME.Tests\coverage.opencover.xml" }'
+- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { &
+        dotnet sonarscanner begin
+         /k:"$env:SONAR_PROJECT"
+         /o:"$env:SONAR_ORGANIZATION"
+         /d:sonar.branch.name="$env:APPVEYOR_REPO_BRANCH"
+         /d:sonar.host.url="https://sonarcloud.io"
+         /d:sonar.login="$env:SONAR_TOKEN"
+         /v:"$env:APPVEYOR_BUILD_NUMBER"
+         /d:sonar.exclusions="**/bin/**/*,**/obj/**/*"
+         /d:sonar.coverage.exclusions="**/$env:SOLUTION_NAME.Tests/**,**/*Tests.cs"
+         /d:sonar.cs.opencover.reportsPaths="$env:CD\Tests\$env:SOLUTION_NAME.Tests\coverage.opencover.xml"
+    }'
+- ps: 'if ($env:APPVEYOR_PULL_REQUEST_NUMBER) { &
+        dotnet sonarscanner begin 
+         /k:"$env:SONAR_PROJECT" 
+         /o:"$env:SONAR_ORGANIZATION"
+         /d:sonar.pullrequest.key="$env:APPVEYOR_PULL_REQUEST_NUMBER"
+         /d:sonar.host.url="https://sonarcloud.io"
+         /d:sonar.login="$env:SONAR_TOKEN"
+         /v:"$env:APPVEYOR_BUILD_NUMBER"
+         /d:sonar.exclusions="**/bin/**/*,**/obj/**/*"
+         /d:sonar.coverage.exclusions="**/$env:SOLUTION_NAME.Tests/**,**/*Tests.cs"
+         /d:sonar.cs.opencover.reportsPaths="$env:CD\Tests\$env:SOLUTION_NAME.Tests\coverage.opencover.xml"
+    }'
 - dotnet build %SOLUTION_NAME%.sln
 - dotnet test .\Tests\%SOLUTION_NAME%.Tests\%SOLUTION_NAME%.Tests.csproj 
  /p:CollectCoverage=true 
  /p:CoverletOutputFormat="opencover"
 - codecov -f "%CD%\Tests\%SOLUTION_NAME%.Tests\coverage.opencover.xml"
-- SET JAVA_HOME=C:\Program Files\Java\jdk11
-- SET PATH=%JAVA_HOME%\bin;%PATH%
 - java 
  -jar 
  ./codacy-test-reporter.jar report 
  -l CSharp 
  -t %CODACY_PROJECT_TOKEN% 
  -r "%CD%\Tests\%SOLUTION_NAME%.Tests\coverage.opencover.xml"
-- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER -And $env:APPVEYOR_REPO_BRANCH -eq "master") { & 
- dotnet sonarscanner end 
- /d:sonar.login="$env:SONAR_TOKEN" }'
+- dotnet sonarscanner end /d:sonar.login="%SONAR_TOKEN%"
 
 after_build:
-
-- xcopy %CD%\Src\%SOLUTION_NAME%\bin\Release\netstandard2.1\*.* %CD%\Build\
+- xcopy %CD%\Src\%SOLUTION_NAME%\bin\Release\netstandard2.0\*.* %CD%\Build\2.0\
+- xcopy %CD%\Src\%SOLUTION_NAME%\bin\Release\netstandard2.1\*.* %CD%\Build\2.1\
 
 - copy %CD%\Src\%SOLUTION_NAME%\bin\Release\%SOLUTION_NAME%SDK.%APPVEYOR_BUILD_VERSION%.nupkg %SOLUTION_NAME%SDK.%APPVEYOR_BUILD_VERSION%.nupkg
 
@@ -107,3 +119,11 @@ deploy:
   auth_token: $(GITHUB_TOKEN)
   force_update: true
   artifact: ZipFile
+  
+- provider: GitHub
+  on:
+   branch: main
+  tag: $(appveyor_build_version)
+  auth_token: $(GITHUB_TOKEN)
+  force_update: true
+  artifact: Coverage

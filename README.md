@@ -51,8 +51,7 @@ Download the latest zip file from the [Release](https://github.com/GuiBranco/pag
 
 ---
 
-
-## Usage
+## Features
 
 Implements all features of Pagar.Me API available at [Pagar.Me](https://docs.pagar.me/docs/overview-principal)
 

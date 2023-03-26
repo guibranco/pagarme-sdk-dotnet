@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <ProjectGuid>607C5F01-7464-496C-A4E7-9DA6FE35234E</ProjectGuid>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Guilherme Branco Stracini</Authors>
-    <Copyright>© 2021 Guilherme Branco Stracini. All rights reserved.</Copyright>
+    <Copyright>© 2023 Guilherme Branco Stracini. All rights reserved.</Copyright>
     <Description>The Pagar.Me SDK for .NET projects</Description>
     <PackageProjectUrl>https://guibranco.github.io/PagarMe-SDK-dotnet</PackageProjectUrl>
     <RepositoryUrl>https://github.com/guibranco/PagarMe-SDK-dotnet</RepositoryUrl>
@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <None Include="../../LICENSE" Pack="true" PackagePath="\" />
-    <None Include="../../logo.png" Pack="true" PackagePath="\" />
-	<None Include="../../packageLogo.png" Pack="true" PackagePath="\" />
+    <None Include="../../packageLogo.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>

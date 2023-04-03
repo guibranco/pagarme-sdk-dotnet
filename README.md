@@ -18,6 +18,9 @@ The [Pagar.Me](https://pagar.me) SDK for .NET projects.
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/7d2d55d973504d37b6046db35243e6d8)](https://www.codacy.com/gh/guibranco/pagarme-sdk-dotnet/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=guibranco/pagarme-sdk-dotnet&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/guibranco/pagarme-sdk-dotnet/branch/main/graph/badge.svg)](https://codecov.io/gh/guibranco/pagarme-sdk-dotnet)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/8dbe39c9694e094431ec/maintainability)](https://codeclimate.com/github/guibranco/pagarme-sdk-dotnet/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8dbe39c9694e094431ec/test_coverage)](https://codeclimate.com/github/guibranco/pagarme-sdk-dotnet/test_coverage)
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/93ba8c7ae3e86ca7e2a7/maintainability)](https://codeclimate.com/github/guibranco/pagarme-sdk-dotnet/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/93ba8c7ae3e86ca7e2a7/test_coverage)](https://codeclimate.com/github/guibranco/pagarme-sdk-dotnet/test_coverage)
 

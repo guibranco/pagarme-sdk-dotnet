@@ -21,9 +21,6 @@ The [Pagar.Me](https://pagar.me) SDK for .NET projects.
 [![Maintainability](https://api.codeclimate.com/v1/badges/8dbe39c9694e094431ec/maintainability)](https://codeclimate.com/github/guibranco/pagarme-sdk-dotnet/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/8dbe39c9694e094431ec/test_coverage)](https://codeclimate.com/github/guibranco/pagarme-sdk-dotnet/test_coverage)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/93ba8c7ae3e86ca7e2a7/maintainability)](https://codeclimate.com/github/guibranco/pagarme-sdk-dotnet/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/93ba8c7ae3e86ca7e2a7/test_coverage)](https://codeclimate.com/github/guibranco/pagarme-sdk-dotnet/test_coverage)
-
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=guibranco_pagarme-sdk-dotnet&metric=alert_status)](https://sonarcloud.io/dashboard?id=guibranco_pagarme-sdk-dotnet)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=guibranco_pagarme-sdk-dotnet&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=guibranco_pagarme-sdk-dotnet)
 

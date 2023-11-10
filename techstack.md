@@ -148,7 +148,6 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-
 ## <img src='https://img.stackshare.io/group.svg' /> Open source packages (3)</h2>
 
 ## <img width='24' height='24' src='https://img.stackshare.io/service/2637/6I3oEOP4_400x400.jpg'/> NuGet (3)
@@ -157,7 +156,7 @@ Full tech stack [here](/techstack.md)
 |:------|:------|:------|:------|:------|:------|
 |[Microsoft.AspNet.WebApi.Client](https://www.nuget.org/Microsoft.AspNet.WebApi.Client)|v6.0.0|10/30/23|snyk-bot |Apache-2.0|N/A|
 |[Newtonsoft.Json](https://www.nuget.org/Newtonsoft.Json)|v13.0.3|10/30/23|snyk-bot |MIT|N/A|
-|[xunit.runner.visualstudio](https://www.nuget.org/xunit.runner.visualstudio)|v2.5.3|11/06/23|dependabot[bot] |Other|N/A|
+|[xunit.runner.visualstudio](https://www.nuget.org/xunit.runner.visualstudio)|v2.5.3|11/06/23|dependabot\[bot] |Other|N/A|
 
 <br/>
 <div align='center'>

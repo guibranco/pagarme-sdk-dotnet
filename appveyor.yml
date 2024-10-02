@@ -4,8 +4,6 @@ image: Visual Studio 2022
 configuration: Release
 
 environment:
-  SONAR_TOKEN: 
-    secure: 6PnCTgMf+yjUZhELcWXdrZafF1RbYz1HV+iCrxL5lUyfODK2yk7FgJHC+xI1f2AL
   CODACY_PROJECT_TOKEN:
     secure: 3dMI1B9sHxGzBHqBUYpRAm/BYwfjvaOFmgZrgsGWpDB+aefpf+E3kVoLSiVg2K6w
   CODECLIMATE_TOKEN:

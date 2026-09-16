@@ -57,7 +57,11 @@ internal sealed class PlansResource : IPlansResource
     {
         Guard.NotNullOrWhiteSpace(planId, nameof(planId));
         Guard.NotNull(request, nameof(request));
-        return _connection.PutAsync<Plan>(ApiPath.Join(BasePath, planId), request, cancellationToken);
+        return _connection.PutAsync<Plan>(
+            ApiPath.Join(BasePath, planId),
+            request,
+            cancellationToken
+        );
     }
 
     /// <inheritdoc />

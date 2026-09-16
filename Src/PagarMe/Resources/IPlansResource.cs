@@ -15,7 +15,10 @@ public interface IPlansResource
     /// <param name="request">The plan to create.</param>
     /// <param name="cancellationToken">A token used to cancel the operation.</param>
     /// <returns>The created plan.</returns>
-    Task<Plan> CreateAsync(CreatePlanRequest request, CancellationToken cancellationToken = default);
+    Task<Plan> CreateAsync(
+        CreatePlanRequest request,
+        CancellationToken cancellationToken = default
+    );
 
     /// <summary>
     /// Retrieves a plan. <c>GET /plans/{plan_id}</c>.

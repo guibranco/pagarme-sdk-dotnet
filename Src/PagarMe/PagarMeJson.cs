@@ -28,7 +28,8 @@ public static class PagarMeJson
     /// <typeparam name="T">The target type.</typeparam>
     /// <param name="json">The JSON document.</param>
     /// <returns>The deserialized value, or <see langword="null" /> when the document is <c>null</c>.</returns>
-    public static T? Deserialize<T>(string json) => JsonConvert.DeserializeObject<T>(json, Settings);
+    public static T? Deserialize<T>(string json) =>
+        JsonConvert.DeserializeObject<T>(json, Settings);
 
     /// <summary>
     /// Creates a <see cref="JsonSerializer" /> configured with the SDK conventions.

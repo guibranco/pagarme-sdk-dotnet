@@ -37,7 +37,11 @@ internal sealed class OrdersResource : IOrdersResource
     public Task<Order> GetAsync(string orderId, CancellationToken cancellationToken = default)
     {
         Guard.NotNullOrWhiteSpace(orderId, nameof(orderId));
-        return _connection.GetAsync<Order>(ApiPath.Join(BasePath, orderId), null, cancellationToken);
+        return _connection.GetAsync<Order>(
+            ApiPath.Join(BasePath, orderId),
+            null,
+            cancellationToken
+        );
     }
 
     /// <inheritdoc />

@@ -43,7 +43,10 @@ internal sealed class InvoicesResource : IInvoicesResource
     }
 
     /// <inheritdoc />
-    public Task<Invoice> CancelAsync(string invoiceId, CancellationToken cancellationToken = default)
+    public Task<Invoice> CancelAsync(
+        string invoiceId,
+        CancellationToken cancellationToken = default
+    )
     {
         Guard.NotNullOrWhiteSpace(invoiceId, nameof(invoiceId));
         return _connection.DeleteAsync<Invoice>(

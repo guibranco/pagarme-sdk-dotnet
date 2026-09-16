@@ -93,7 +93,8 @@ internal static class QueryStringBuilder
                     .ToUniversalTime()
                     .ToString(DateFormat, CultureInfo.InvariantCulture);
             case DateTime dateTime:
-                var utc = dateTime.Kind == DateTimeKind.Local ? dateTime.ToUniversalTime() : dateTime;
+                var utc =
+                    dateTime.Kind == DateTimeKind.Local ? dateTime.ToUniversalTime() : dateTime;
                 return utc.ToString(DateFormat, CultureInfo.InvariantCulture);
             case IFormattable formattable:
                 return formattable.ToString(null, CultureInfo.InvariantCulture);

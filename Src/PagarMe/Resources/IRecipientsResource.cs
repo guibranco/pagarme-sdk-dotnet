@@ -58,5 +58,8 @@ public interface IRecipientsResource
     /// <param name="recipientId">The recipient identifier.</param>
     /// <param name="cancellationToken">A token used to cancel the operation.</param>
     /// <returns>The balance.</returns>
-    Task<Balance> GetBalanceAsync(string recipientId, CancellationToken cancellationToken = default);
+    Task<Balance> GetBalanceAsync(
+        string recipientId,
+        CancellationToken cancellationToken = default
+    );
 }

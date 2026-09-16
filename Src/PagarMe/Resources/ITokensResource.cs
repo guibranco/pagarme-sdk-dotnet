@@ -18,7 +18,10 @@ public interface ITokensResource
     /// <param name="cancellationToken">A token used to cancel the operation.</param>
     /// <returns>The short lived token.</returns>
     /// <exception cref="PagarMeException">No public key is configured.</exception>
-    Task<Token> CreateAsync(CreateTokenRequest request, CancellationToken cancellationToken = default);
+    Task<Token> CreateAsync(
+        CreateTokenRequest request,
+        CancellationToken cancellationToken = default
+    );
 
     /// <summary>
     /// Tokenizes a card using an explicit public key. <c>POST /tokens?appId={public_key}</c>.

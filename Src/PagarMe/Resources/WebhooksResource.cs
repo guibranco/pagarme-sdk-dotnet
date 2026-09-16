@@ -26,7 +26,11 @@ internal sealed class WebhooksResource : IWebhooksResource
     public Task<Webhook> GetAsync(string hookId, CancellationToken cancellationToken = default)
     {
         Guard.NotNullOrWhiteSpace(hookId, nameof(hookId));
-        return _connection.GetAsync<Webhook>(ApiPath.Join(BasePath, hookId), null, cancellationToken);
+        return _connection.GetAsync<Webhook>(
+            ApiPath.Join(BasePath, hookId),
+            null,
+            cancellationToken
+        );
     }
 
     /// <inheritdoc />

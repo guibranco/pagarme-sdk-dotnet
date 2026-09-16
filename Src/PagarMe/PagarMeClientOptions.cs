@@ -48,10 +48,7 @@ public sealed class PagarMeClientOptions
     {
         if (string.IsNullOrWhiteSpace(SecretKey))
         {
-            throw new ArgumentException(
-                "The Pagar.me secret key is required.",
-                nameof(SecretKey)
-            );
+            throw new ArgumentException("The Pagar.me secret key is required.", nameof(SecretKey));
         }
 
         if (
@@ -68,10 +65,7 @@ public sealed class PagarMeClientOptions
 
         if (Timeout <= TimeSpan.Zero)
         {
-            throw new ArgumentException(
-                "The timeout must be greater than zero.",
-                nameof(Timeout)
-            );
+            throw new ArgumentException("The timeout must be greater than zero.", nameof(Timeout));
         }
     }
 

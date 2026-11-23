@@ -168,10 +168,9 @@ internal sealed class ApiConnection : IApiConnection
 
     private static ProductInfoHeaderValue CreateUserAgent()
     {
-        var version =
-            typeof(ApiConnection)
-                .Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()
-                ?.InformationalVersion
+        var version = typeof(ApiConnection)
+            .Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+            ?.InformationalVersion
             ?? typeof(ApiConnection).Assembly.GetName().Version?.ToString()
             ?? "1.0.0";
 
